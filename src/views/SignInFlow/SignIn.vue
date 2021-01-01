@@ -3,6 +3,7 @@
     class="container"
     :class="{ 'light-background': !isDarkMode, 'dark-background': isDarkMode }"
   >
+    <Notification v-if="hasText" :text="text" />
     <RequestAccount />
     <div class="login">
       <img src="@/assets/DCHQ.svg" v-show="isDarkMode" />
@@ -41,17 +42,21 @@
 import { auth } from "@/main";
 import RequestAccount from "@/components/RequestAccount";
 import ThemeSwitch from "@/components/ThemeSwitch";
+import Notification from "@/components/Notification";
 
 export default {
   name: "SignIn",
   components: {
     RequestAccount,
     ThemeSwitch,
+    Notification,
   },
   data() {
     return {
       email: null,
       password: null,
+      hasText: false,
+      text: "",
     };
   },
   computed: {
@@ -73,6 +78,14 @@ export default {
           alert("Error: " + error);
         });
     },
+  },
+  mounted() {
+    const params = this.$route.params;
+
+    if (params.userLoggedOut) {
+      this.hasText = true;
+      this.text = "You have logged out!";
+    }
   },
 };
 </script>

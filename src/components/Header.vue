@@ -7,11 +7,25 @@
 </template>
 
 <script>
+import { auth } from "@/main";
+
 export default {
   name: "Header",
   methods: {
     onClick() {
-      alert("Logout");
+      const user = auth.currentUser();
+
+      user
+        .logout()
+        .then((response) => {
+          this.$router.push({
+            name: "signin",
+            params: { userLoggedOut: true },
+          });
+        })
+        .catch((error) => {
+          alert("Error: ", error);
+        });
     },
   },
 };
