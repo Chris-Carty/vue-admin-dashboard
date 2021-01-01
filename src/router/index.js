@@ -9,44 +9,42 @@ import * as netlifyIdentityWidget from "netlify-identity-widget";
 
 Vue.use(VueRouter);
 
-const routes = [
-  {
-    path: "/",
-    name: "Home",
-    component: Home,
-    meta: {
-      requiresAuth: true
-    }
-  },
-  {
-    path: "/team",
-    name: "team",
-    component: Team,
-    meta: {
-      requiresAuth: true
-    }
-  },
-  {
-    path: "/signin",
-    name: "signin",
-    component: SignIn,
-  },
-  {
-    path: "/request",
-    name: "request",
-    component: Request,
-  },
-  {
-    path: "/recover",
-    name: "recover",
-    component: Recover,
-  },
-];
-
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  routes,
+  routes: [
+    {
+      path: "/",
+      name: "Home",
+      component: Home,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/team",
+      name: "team",
+      component: Team,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/signin",
+      name: "signin",
+      component: SignIn,
+    },
+    {
+      path: "/request",
+      name: "request",
+      component: Request,
+    },
+    {
+      path: "/recover",
+      name: "recover",
+      component: Recover,
+    },
+  ]
 });
 
 router.beforeEach((to, from, next) => {
