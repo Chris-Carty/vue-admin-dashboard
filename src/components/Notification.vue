@@ -1,7 +1,7 @@
 <template>
   <transition
-    enter-active-class="animated fadeInDown"
-    leave-active-class="animated fadeOutRight"
+    enter-active-class="animate__animated animate__fadeInDown"
+    leave-active-class="animate__animated animate__fadeOutRight"
   >
     <div v-show="show" class="bubble">
       <div class="message">{{ text }}</div>
