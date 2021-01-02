@@ -14,14 +14,14 @@
       <form @submit.prevent="onSubmit">
         <input
           type="email"
-          placeholder="Email"
+          placeholder="chris-carty@live.com (Default)"
           :class="{ 'light-field': isDarkMode, 'dark-field': !isDarkMode }"
           v-model="email"
           required
         />
         <input
           type="password"
-          placeholder="Password"
+          placeholder="12345 (Default)"
           :class="{ 'light-field': isDarkMode, 'dark-field': !isDarkMode }"
           v-model="password"
           required
@@ -34,16 +34,19 @@
         >Forgot your password?</router-link
       >
       <ThemeSwitch />
+      <div class="github-container">
+        <gh-btns-star slug="thomaswangio/vue-admin-dashboard" show-count />
+        <gh-btns-fork slug="thomaswangio/vue-admin-dashboard" show-count />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import { auth } from "@/main";
 import RequestAccount from "@/components/RequestAccount";
 import ThemeSwitch from "@/components/ThemeSwitch";
 import Notification from "@/components/Notification";
-
+import { auth } from "@/main";
 export default {
   name: "SignIn",
   components: {
@@ -68,7 +71,6 @@ export default {
     onSubmit() {
       const email = this.email;
       const password = this.password;
-
       auth
         .login(email, password, true)
         .then((response) => {
@@ -81,31 +83,38 @@ export default {
   },
   mounted() {
     const params = this.$route.params;
-
     if (params.userLoggedOut) {
       this.hasText = true;
       this.text = "You have logged out!";
     } else if (params.userRecoveredAccount) {
       this.hasText = true;
-      this.text = "A recovery email has been sent " + params.email;
+      this.text = `A recovery email has been sent to ${params.email}`;
     } else if (params.userRequestedAccount) {
       this.hasText = true;
-      this.text =
-        "Your request has been sent to an administrator for " + params.email;
+      this.text = `Your request has been sent to an administator for ${params.email}`;
     }
   },
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  padding-top: 16px;
+  padding-bottom: 24px;
 }
-
 .login {
   width: 400px;
+  text-align: center;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.github-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 </style>
