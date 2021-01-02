@@ -67,6 +67,7 @@ export default {
   box-sizing: border-box;
   width: 100%;
   padding: 15px 15%;
+  background: $super-dark-blue;
 
   a {
     font-weight: bold;
