@@ -109,12 +109,12 @@ import Header from "@/components/Header.vue";
 export default {
   name: "manage",
   components: {
-    Header
+    Header,
   },
   computed: {
     isDarkMode() {
       return this.$store.getters.isDarkMode;
-    }
+    },
   },
   data() {
     return {
@@ -123,15 +123,15 @@ export default {
       subscriptionState: "",
       seated: "",
       onTrial: "",
-      trialEndDate: ""
+      trialEndDate: "",
     };
   },
- /* methods: {
+  methods: {
     getUserData() {
       let url = new URL("http://vue-hq.netlify.app/.netlify/functions/hello");
       const data = {
         email: this.email,
-        subscriptionId: this.subscriptionId
+        subscriptionId: this.subscriptionId,
       };
       url.search = new URLSearchParams(data);
       this.subscriptionState = "Loading...";
@@ -139,26 +139,26 @@ export default {
       this.onTrial = "Loading...";
       this.trialEndDate = "Loading...";
       fetch(url)
-        .then(response => {
+        .then((response) => {
           return response.json();
         })
-        .then(data => {
+        .then((data) => {
           console.log(data);
           this.subscriptionState = data.subscriptionStatus;
           this.seated = data.seated;
           this.onTrial = data.onTrial;
           this.trialEndDate = data.trialEndDate;
         })
-        .catch(error => {
+        .catch((error) => {
           this.subscriptionState = "";
           this.seated = "";
           this.onTrial = "";
           this.trialEndDate = "";
           alert(error);
         });
-    }
-  }
-};  */
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
