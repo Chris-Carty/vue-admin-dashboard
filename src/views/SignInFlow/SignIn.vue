@@ -98,6 +98,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+input,
+button {
+  border-radius: 20px;
+}
 .container {
   display: flex;
   justify-content: center;
