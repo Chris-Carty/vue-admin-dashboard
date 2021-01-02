@@ -105,6 +105,7 @@ a {
 .light-field {
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
   &::placeholder {
     color: rgba(255, 255, 255, 0.3);
   }
@@ -113,6 +114,7 @@ a {
 .dark-field {
   background: rgba(198, 208, 235, 0.2);
   border: 1px solid rgba(0, 0, 0, 0.2);
+  color: black;
   &::placeholder {
     color: rgba(0, 0, 0, 0.3);
   }
