@@ -18,6 +18,14 @@
         :options="chartOptions"
         :series="series"
       ></apexchart>
+      <iframe
+        width="600"
+        height="450"
+        src="https://datastudio.google.com/embed/reporting/f93dd2c1-e6b0-4dbc-8165-689d711923fc/page/GS7uB"
+        frameborder="0"
+        style="border:0"
+        allowfullscreen
+      ></iframe>
     </div>
   </div>
 </template>
