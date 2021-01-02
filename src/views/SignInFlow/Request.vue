@@ -54,16 +54,30 @@ export default {
     onSubmit() {
       const email = this.email;
 
-      // Slack API logic
-    },
-  },
-  mounted() {
-    const params = this.$route.params;
+      let slackURL = new URL("https://slack.com/api/chat.postMessage");
 
-    if (params.userLoggedOut) {
-      this.hasText = true;
-      this.text = "You have logged out!";
-    }
+      const data = {
+        token: "xoxb-1632020851120-1593408329591-66zJcYfPaUcMlQ3Lv1mV17d5",
+        channel: "hq-test",
+        text: `${email} has requested admin access to HQ. Please go to Netlify to invite them.`,
+      };
+
+      slackURL.search = new URLSearchParams(data);
+
+      fetch(slackURL)
+        .then(() => {
+          this.$router.push({
+            name: "signin",
+            params: {
+              userRequestedAccount: true,
+              email: email,
+            },
+          });
+        })
+        .catch((error) => {
+          alert("Error: " + error);
+        });
+    },
   },
 };
 </script>
