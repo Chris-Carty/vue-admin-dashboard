@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Team from "../views/Team.vue";
-import Manage from "./views/Manage.vue";
+import Manage from "../views/Manage.vue";
 import SignIn from "../views/SignInFlow/SignIn.vue";
 import Request from "../views/SignInFlow/Request.vue";
 import Recover from "../views/SignInFlow/Recover.vue";
