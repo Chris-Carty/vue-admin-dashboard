@@ -30,6 +30,11 @@ import { auth } from "@/main";
 
 export default {
   name: "Header",
+  computed: {
+    isDarkMode() {
+      return this.$store.getters.isDarkMode;
+    },
+  },
   methods: {
     onClick() {
       const user = auth.currentUser();
