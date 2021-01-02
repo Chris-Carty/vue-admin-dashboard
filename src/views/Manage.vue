@@ -106,6 +106,7 @@
 
 <script>
 import Header from "@/components/Header.vue";
+
 export default {
   name: "manage",
   components: {
@@ -125,38 +126,6 @@ export default {
       onTrial: "",
       trialEndDate: "",
     };
-  },
-  methods: {
-    getUserData() {
-      let url = new URL("http://vue-hq.netlify.app/.netlify/functions/hello");
-      const data = {
-        email: this.email,
-        subscriptionId: this.subscriptionId,
-      };
-      url.search = new URLSearchParams(data);
-      this.subscriptionState = "Loading...";
-      this.seated = "Loading...";
-      this.onTrial = "Loading...";
-      this.trialEndDate = "Loading...";
-      fetch(url)
-        .then((response) => {
-          return response.json();
-        })
-        .then((data) => {
-          console.log(data);
-          this.subscriptionState = data.subscriptionStatus;
-          this.seated = data.seated;
-          this.onTrial = data.onTrial;
-          this.trialEndDate = data.trialEndDate;
-        })
-        .catch((error) => {
-          this.subscriptionState = "";
-          this.seated = "";
-          this.onTrial = "";
-          this.trialEndDate = "";
-          alert(error);
-        });
-    },
   },
 };
 </script>
