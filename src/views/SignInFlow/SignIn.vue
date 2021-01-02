@@ -9,7 +9,7 @@
       <img src="@/assets/DCHQ.svg" v-show="isDarkMode" />
       <img src="@/assets/DCHQ-dark.svg" v-show="!isDarkMode" />
       <h4 :class="{ 'light-text': isDarkMode, 'dark-text': !isDarkMode }">
-        Sign into Design+Code HQ
+        Design+Code HQ
       </h4>
       <form @submit.prevent="onSubmit">
         <input
