@@ -187,4 +187,11 @@ p {
   line-height: 31px;
   font-size: 20px;
 }
+
+h1.dark {
+  @include heading-3($black);
+}
+h1.light {
+  @include heading-3($white);
+}
 </style>
