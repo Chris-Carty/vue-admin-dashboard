@@ -10,7 +10,7 @@
             :class="{ 'light-card': !isDarkMode, 'dark-card': isDarkMode }"
           >
             <img
-              src="@/assets/slack.png"
+              src="@/assets/slack.svg"
               class="card-header"
               :class="{
                 'light-header': !isDarkMode,
@@ -29,7 +29,7 @@
             :class="{ 'light-card': !isDarkMode, 'dark-card': isDarkMode }"
           >
             <img
-              src="@/assets/notion.png"
+              src="@/assets/notion.svg"
               class="card-header"
               :class="{
                 'light-header': !isDarkMode,
@@ -48,7 +48,7 @@
             :class="{ 'light-card': !isDarkMode, 'dark-card': isDarkMode }"
           >
             <img
-              src="@/assets/figma.png"
+              src="@/assets/figma.svg"
               class="card-header"
               :class="{
                 'light-header': !isDarkMode,
@@ -67,7 +67,7 @@
             :class="{ 'light-card': !isDarkMode, 'dark-card': isDarkMode }"
           >
             <img
-              src="@/assets/contentful.png"
+              src="@/assets/contentful.svg"
               class="card-header"
               :class="{
                 'light-header': !isDarkMode,
@@ -88,7 +88,7 @@
             :class="{ 'light-card': !isDarkMode, 'dark-card': isDarkMode }"
           >
             <img
-              src="@/assets/dropbox.png"
+              src="@/assets/dropbox.svg"
               class="card-header"
               :class="{
                 'light-header': !isDarkMode,
