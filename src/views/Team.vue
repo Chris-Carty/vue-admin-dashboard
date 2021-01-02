@@ -192,6 +192,14 @@ h3.dark {
 h3.light {
   @include heading-3($white);
 }
+
+h1.dark {
+  @include heading-3($black);
+}
+h1.light {
+  @include heading-3($white);
+}
+
 p {
   font-size: 15px;
   line-height: 24px;
