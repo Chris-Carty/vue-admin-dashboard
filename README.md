@@ -1,3 +1,8 @@
+DEMO: 
+
+https://vue-dashboard-concept.netlify.app
+
+
 # vue-admin-dashboard
 
 ## Project setup
